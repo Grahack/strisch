@@ -15,11 +15,11 @@
 (defn string [x y l]
   (let [; the 2 is a hack for displaying separators entirely
         line-y (+ 3 y (/ string-h 2))
-        fret->x #(* fret-sep (+ 1 %))]
+        fret->x #(* fret-sep %)]
     (if (> l 0)
       [:g
         [:line
-         {:x1 (+ fret-sep x) :y1 line-y :x2 (+ x (fret->x l)) :y2 line-y
+         {:x1 x :y1 line-y :x2 (+ x (fret->x l)) :y2 line-y
           :stroke "black" :stroke-width 2}]
         (map #(identity [:line
                          ; the 1 is a hack for displaying entirely
@@ -56,7 +56,7 @@
   [:div
    [:h1 "Pentatoniques"]
    [:h2 "Sur manches en quartes"]
-   (diagram [[0 4] [1 3]]
+   (diagram [[1 4] [2 3]]
              [[0 0] [2 1]])
    ])
 
