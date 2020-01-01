@@ -36,7 +36,7 @@
        ; strings
        (map #(let [data (nth content %)
                    x    (nth data 0)
-                   y     (* % string-sep)
+                   y    (* % string-sep)
                    l    (nth data 1)
                    dots (nth data 2)
                    ; the 1 is a hack for centering the dot
