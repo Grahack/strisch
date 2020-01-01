@@ -52,12 +52,33 @@
              (range (count dots)))]
       ])
 
+(def twoxfour [[0 0] [1 4] [1 4]])
+(def threexthree [[0 0] [1 3] [1 3] [1 3]])
+(def MC [[0 0] [1 3] [1 4] [1 4]])
+(def MA [[0 0] [1 4] [2 3] [2 3]])
+(def MG [[0 0] [1 3] [1 3] [1 4]])
+(def ME [[0 0] [1 4] [1 4] [2 3]])
+(def MD threexthree)
+
 (defn hello-world []
   [:div
    [:h1 "Pentatoniques"]
    [:h2 "Sur manches en quartes"]
-   (diagram [[1 4] [2 3]]
-             [[0 0] [2 1]])
+   [:h3 "m"]
+   [:p (diagram twoxfour [[1 1]]) (diagram threexthree [[3 2] [1 4]])]
+   [:p (diagram ME [[1 1]]) (diagram MG [[3 1] [1 3]])]
+   [:p (diagram MC [[1 2]]) (diagram MD [[3 2]])]
+   [:p (diagram MG [[1 3]]) (diagram MA [[4 3]])]
+   [:h3 "M"]
+   [:p (diagram twoxfour [[4 1] [2 3]]) (diagram threexthree [[1 1] [4 4]])]
+   [:p (diagram MD [[1 1]]) (diagram ME [[4 1]])]
+   [:p (diagram MA [[2 2]]) (diagram MC [[4 2]])]
+   [:p (diagram ME [[2 3]]) (diagram MG [[4 3]])]
+   [:h3 "d"]
+   [:p (diagram twoxfour [[1 0] [4 3]]) (diagram threexthree [[3 1] [1 3]])]
+   [:p (diagram MC [[1 1]]) (diagram MD [[3 1]])]
+   [:p (diagram MG [[1 2]]) (diagram MA [[4 2]])]
+   [:p (diagram MD [[1 3]]) (diagram ME [[4 3]])]
    ])
 
 (defn mount [el]
