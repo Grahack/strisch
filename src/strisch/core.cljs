@@ -29,34 +29,35 @@
              (range (+ l 1)))])
   ))
 
-; content is a list of [offset length [dots]]
-(defn diagram [content]
+; strings is a list of [x l] where x is the offset and l the length
+; dots is a list of coordinates
+(defn diagram [strings dots]
    [:svg
      [:g
        ; strings
-       (map #(let [data (nth content %)
+       (map #(let [data (nth strings %)
                    x    (nth data 0)
                    y    (* % string-sep)
-                   l    (nth data 1)
-                   dots (nth data 2)
+                   l    (nth data 1)]
+                 (string (* x fret-sep) y l))
+            (range (count strings)))
+       (map #(let [data (nth dots %)
+                   x    (nth data 0)
+                   y    (nth data 1)
                    ; the 1 is a hack for centering the dot
-                   dot->pos (fn [dot]
-                                (+ 1 (/ fret-sep 2) (* dot fret-sep)))]
-               [:g
-                 (string (* x fret-sep) y l)
-                 ; the 1 is a hack for centering the dot
-                 (map (fn [dot] [:circle {:cx (dot->pos dot)
-                                          :cy (+ 1 string-h y) :r 5}])
-                      dots)])
-            (range (count content)))
-      ]])
+                   dot-x (fn [x] (+ 1 (/ fret-sep 2) (* x fret-sep)))
+                   ; the 1 is a hack for centering the dot
+                   dot-y (fn [y] (+ 1 string-h (* string-sep y)))]
+                 [:circle {:cx (dot-x x) :cy (dot-y y) :r 5}])
+             (range (count dots)))]
+      ])
 
 (defn hello-world []
   [:div
    [:h1 "Pentatoniques"]
    [:h2 "Sur manches en quartes"]
-   (diagram [[0 4 [1]]
-             [1 3 []]])
+   (diagram [[0 4] [1 3]]
+             [[0 0] [2 1]])
    ])
 
 (defn mount [el]
