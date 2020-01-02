@@ -1,10 +1,8 @@
-# strisch.core
+# Strisch
 
-FIXME: Write a one-line description of your library/project.
+Scale diagrams for string instruments
 
-## Overview
-
-FIXME: Write a paragraph about the library/project and highlight its goals.
+[See the static page here](strisch.html).
 
 ## Development
 
@@ -28,10 +26,3 @@ To create a production build run:
 
 	lein clean
 	lein fig:min
-
-
-## License
-
-Copyright © 2018 FIXME
-
-Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
