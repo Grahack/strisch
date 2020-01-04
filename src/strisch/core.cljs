@@ -41,6 +41,7 @@
                    l    (nth data 1)]
                  (string (* x fret-sep) y l))
             (range (count strings)))
+       ; dots
        (map #(let [data (nth dots %)
                    x    (nth data 0)
                    y    (nth data 1)
