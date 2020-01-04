@@ -8,7 +8,7 @@
 (defn get-app-element []
   (gdom/getElement "app"))
 
-(def fret-sep 30)
+(def fret-sep 40)
 (def string-sep 20)
 (def string-h 4)
 
