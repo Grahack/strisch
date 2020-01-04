@@ -29,6 +29,15 @@
              (range (+ l 1)))])
   ))
 
+(defn dot
+  ([x y] (dot x y 5 true))
+  ([x y r] (dot x y r false))
+  ([x y r filled]
+    (let [; the 1 is a hack for centering the dot
+          dot-x (fn [x] (+ 1 (/ fret-sep 2) (* x fret-sep)))
+          dot-y (fn [y] (+ 1 string-h (* string-sep y)))]
+      [:circle {:cx (dot-x x) :cy (dot-y y) :r r}])))
+
 ; strings is a list of [x l] where x is the offset and l the length
 ; dots is a list of coordinates
 (defn diagram [strings dots]
@@ -42,15 +51,7 @@
                  (string (* x fret-sep) y l))
             (range (count strings)))
        ; dots
-       (map #(let [data (nth dots %)
-                   x    (nth data 0)
-                   y    (nth data 1)
-                   ; the 1 is a hack for centering the dot
-                   dot-x (fn [x] (+ 1 (/ fret-sep 2) (* x fret-sep)))
-                   ; the 1 is a hack for centering the dot
-                   dot-y (fn [y] (+ 1 string-h (* string-sep y)))]
-                 [:circle {:cx (dot-x x) :cy (dot-y y) :r 5}])
-            (range (count dots)))]
+       (map #(apply dot %) dots)]
       ])
 
 (def sixxfour  [[0 4] [0 4] [0 4] [0 4] [0 4] [0 4]])
