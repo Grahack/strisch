@@ -49,7 +49,7 @@
                    ; the 1 is a hack for centering the dot
                    dot-y (fn [y] (+ 1 string-h (* string-sep y)))]
                  [:circle {:cx (dot-x x) :cy (dot-y y) :r 5}])
-             (range (count dots)))]
+            (range (count dots)))]
       ])
 
 (def twoxfour [[0 0] [1 4] [1 4]])
