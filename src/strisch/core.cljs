@@ -90,7 +90,29 @@
 ; ♭ ♮ ♯ ø
 (defn hello-world []
   [:div
-   [:h1 "Gamme majeure"]
+   [:h1 "Schémas pour quelques gammes"]
+   [:ul
+     [:li "La " [:a {:href "#maj"} "gamme majeure"]]
+     [:li "Les modes de la gamme majeure"
+       [:ul
+         [:li "le " [:a {:href "#dor"} "dorien"]]
+         [:li "le " [:a {:href "#phr"} "phrygien"]]
+         [:li "le " [:a {:href "#lyd"} "lydien"]]
+         [:li "le " [:a {:href "#mix"} "mixolydien"]]
+         [:li "le " [:a {:href "#aeo"} "aéolien"]]
+         [:li "le " [:a {:href "#loc"} "locrien"]]
+       ]
+     ]
+     [:li "Les gammes " [:a {:href "#penta"} "pentatoniques "]]
+     [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"]]
+     [:li "Les modes de la gamme mineure mélodique"
+       [:ul
+         [:li "le " [:a {:href "#lydb7"} "lydien ♭7"]]
+         [:li "le " [:a {:href "#suploc"} "super locrien"] " (ou « altéré »)"]
+       ]
+     ]
+   ]
+   [:h1 {:id "maj"} "Gamme majeure"]
    [:h2 "C"]
    [:p (diagram sixxfour  (conj GM-C [1 1 5] [3 4 5]))]
    [:h2 "A"]
@@ -101,7 +123,8 @@
    [:p (diagram sixxfour  (conj GM-E [1 0 5] [3 3 5] [1 5 5]))]
    [:h2 "D"]
    [:p (diagram sixxfive  (conj GM-D [4 1 5] [1 3 5]))]
-   [:h1 "Pentatoniques"]
+
+   [:h1 {:id "penta"} "Pentatoniques"]
    [:p "De la penta " [:a {:href "#M"} "majeure"]
        " (do ré mi sol la), notée M, découlent :"]
    [:ul
@@ -130,6 +153,7 @@
        "D E" [:br]
        "A C" [:br]
        "E G" [:br]]
+
    [:h2 "Sur manches en quartes"]
    [:h3 {:id "M"} "M"]
    [:p (diagram twoxfour [[4 1] [2 3]]) (diagram threexthree [[1 1] [4 4]])]
