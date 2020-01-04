@@ -52,6 +52,21 @@
             (range (count dots)))]
       ])
 
+(def sixxfour  [[0 4] [0 4] [0 4] [0 4] [0 4] [0 4]])
+(def sixxfive  [[0 5] [0 5] [0 5] [0 5] [0 5] [0 5]])
+(def sixxsix   [[0 6] [0 6] [0 6] [0 6] [0 6] [0 6]])
+(def sixxseven [[0 7] [0 7] [0 7] [0 7] [0 7] [0 7]])
+(def GM-C [[0 5] [1 5] [3 5] [0 4] [2 4] [3 4] [0 3] [2 3] [3 3]
+           [0 2] [2 2]       [0 1] [1 1] [3 1] [0 0] [1 0] [3 0]])
+(def GM-A [[0 5] [2 5] [4 5] [1 4] [2 4] [4 4] [1 3] [2 3] [4 3]
+           [1 2] [3 2] [4 2] [2 1] [4 1] [5 1] [2 0] [4 0] [6 0]])
+(def GM-G [[1 5] [3 5] [4 5] [1 4] [3 4] [4 4] [1 3] [3 3]
+           [0 2] [1 2] [3 2] [1 1] [2 1] [4 1] [1 0] [3 0] [4 0]])
+(def GM-E [[0 5] [1 5] [3 5] [0 4] [1 4] [3 4] [0 3] [2 3] [3 3]
+           [0 2] [2 2] [3 2]       [1 1] [3 1] [0 0] [1 0] [3 0]])
+(def GM-D [[1 5] [3 5] [4 5] [1 4] [3 4]       [0 3] [1 3] [3 3]
+           [0 2] [1 2] [3 2] [1 1] [3 1] [4 1] [1 0] [3 0] [4 0]])
+
 (def twoxfour [[0 0] [1 4] [1 4]])
 (def threexthree [[0 0] [1 3] [1 3] [1 3]])
 (def MC [[0 0] [1 3] [1 4] [1 4]])
@@ -71,6 +86,17 @@
 ; ♭ ♮ ♯ ø
 (defn hello-world []
   [:div
+   [:h1 "Gamme majeure"]
+   [:h2 "C"]
+   [:p (diagram sixxfour GM-C)]
+   [:h2 "A"]
+   [:p (diagram sixxseven GM-A)]
+   [:h2 "G"]
+   [:p (diagram sixxfive GM-G)]
+   [:h2 "E"]
+   [:p (diagram sixxfour GM-E)]
+   [:h2 "D"]
+   [:p (diagram sixxfive GM-D)]
    [:h1 "Pentatoniques"]
    [:p "De la penta " [:a {:href "#M"} "majeure"]
        " (do ré mi sol la), notée M, découlent :"]
