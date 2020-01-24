@@ -103,7 +103,16 @@
          [:li [:a {:href "#loc"} "locrien"]]
        ]
      ]
-     [:li "Les gammes " [:a {:href "#penta"} "pentatoniques "]]
+     [:li "Les gammes " [:a {:href "#penta"} "pentatoniques "]
+       [:ul
+         [:li  [:a {:href "#m"} "mineure"]]
+         [:li [:a {:href "#d"} "dorien"]]
+         [:li  [:a {:href "#M7"} "M7"]]
+         [:li  [:a {:href "#M711"} "M7♯11"]]
+         [:li  [:a {:href "#alt"} "altérée"]]
+         [:li [:a {:href "#m7b5"} "demi-diminué"]]
+         [:li [:a {:href "#altM"} "altérée majeure"]]
+       ]]
      [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"]]
      [:li "Les modes de la gamme mineure mélodique"
        [:ul
