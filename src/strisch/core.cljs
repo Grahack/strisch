@@ -95,12 +95,12 @@
      [:li "La " [:a {:href "#maj"} "gamme majeure"]]
      [:li "Les modes de la gamme majeure"
        [:ul
-         [:li "le " [:a {:href "#dor"} "dorien"]]
-         [:li "le " [:a {:href "#phr"} "phrygien"]]
-         [:li "le " [:a {:href "#lyd"} "lydien"]]
-         [:li "le " [:a {:href "#mix"} "mixolydien"]]
-         [:li "le " [:a {:href "#aeo"} "aéolien"]]
-         [:li "le " [:a {:href "#loc"} "locrien"]]
+         [:li [:a {:href "#dor"} "dorien"]]
+         [:li [:a {:href "#phr"} "phrygien"]]
+         [:li [:a {:href "#lyd"} "lydien"]]
+         [:li [:a {:href "#mix"} "mixolydien"]]
+         [:li [:a {:href "#aeo"} "aéolien"]]
+         [:li [:a {:href "#loc"} "locrien"]]
        ]
      ]
      [:li "Les gammes " [:a {:href "#penta"} "pentatoniques "]]
