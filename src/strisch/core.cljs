@@ -92,8 +92,7 @@
   [:div
    [:h1 "Schémas pour quelques gammes"]
    [:ul
-     [:li "La " [:a {:href "#maj"} "gamme majeure"]]
-     [:li "Les modes de la gamme majeure"
+     [:li "La " [:a {:href "#maj"} "gamme majeure"] " et ses modes :"
        [:ul
          [:li [:a {:href "#dor"} "dorien"]]
          [:li [:a {:href "#phr"} "phrygien"]]
@@ -113,8 +112,7 @@
          [:li [:a {:href "#m7b5"} "demi-diminué"]]
          [:li [:a {:href "#altM"} "altérée majeure"]]
        ]]
-     [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"]]
-     [:li "Les modes de la gamme mineure mélodique"
+     [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"] " et ses modes :"
        [:ul
          [:li [:a {:href "#lydb7"} "lydien ♭7"]]
          [:li [:a {:href "#suploc"} "super locrien"] " (ou « altéré »)"]
