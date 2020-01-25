@@ -87,6 +87,17 @@
 (def domE [[0 0] [2 3] [1 4] [2 3]])
 (def domD [[0 0] [1 3] [1 4] [1 3]])
 
+(def GminmelC [[1 0] [3 0] [0 1] [1 1] [3 1] [4 1] [0 2] [2 2]
+               [0 3] [1 3] [3 3] [0 4] [2 4] [3 4] [1 5] [3 5]])
+(def GminmelA [[1 0] [3 0] [1 1] [2 1] [4 1] [0 2] [2 2] [3 2]
+               [1 3] [3 3] [0 4] [1 4] [3 4] [4 4] [1 5] [3 5]])
+(def GminmelG [[1 0] [3 0] [4 0] [1 1] [2 1] [4 1] [0 2] [1 2] [3 2] [4 2]
+               [1 3] [3 3] [1 4] [2 4] [4 4] [1 5] [3 5] [4 5]])
+(def GminmelE [[0 0] [1 0] [3 0] [4 0] [1 1] [3 1] [0 2] [1 2] [3 2]
+               [0 3] [2 3] [3 3] [1 4] [3 4] [0 5] [1 5] [3 5] [4 5]])
+(def GminmelD [[1 0] [2 0] [4 0] [1 1] [3 1] [4 1] [1 2] [3 2]
+               [0 3] [1 3] [3 3] [4 3] [1 4] [3 4] [1 5] [2 5] [4 5]])
+
 ; ♭ ♮ ♯ ø
 (defn hello-world []
   [:div
@@ -263,6 +274,30 @@
    [:p (diagram domC [[2 3]]) (diagram domA [[0 3]])]
    [:p (diagram domE [[3 2]]) (diagram domD [[0 2]])]
    [:p (diagram domA [[2 1]]) (diagram domG [[0 1]])]
+
+   [:h1 {:id "mel"} "Mineur mélodique"]
+   [:h2 "C"]
+   [:p (diagram sixxfive (conj GminmelC [1 1 5] [3 4 5]))]
+   [:h2 "A"]
+   [:p (diagram sixxfive (conj GminmelA [3 2 5] [1 4 5]))]
+   [:h2 "G"]
+   [:p (diagram sixxfive (conj GminmelG [4 0 5] [1 2 5] [4 5 5]))]
+   [:h2 "E"]
+   [:p (diagram sixxfive (conj GminmelE [1 0 5] [3 3 5] [1 5 5]))]
+   [:h2 "D"]
+   [:p (diagram sixxfive (conj GminmelD [4 1 5] [1 3 5]))]
+   [:h1 {:id "lydb7"} "Lydien ♭7"]
+   [:p (diagram sixxfive (conj GminmelG [2 1 5] [4 4 5]))]
+   [:p (diagram sixxfive (conj GminmelE [3 2 5] [1 4 5]))]
+   [:p (diagram sixxfive (conj GminmelD [4 0 5] [1 2 5] [4 5 5]))]
+   [:p (diagram sixxfive (conj GminmelC [1 0 5] [3 3 5] [1 5 5]))]
+   [:p (diagram sixxfive (conj GminmelA [4 1 5] [1 3 5]))]
+   [:h1 {:id "suploc"} "Super locrien (altéré)"]
+   [:p (diagram sixxfive (conj GminmelC [0 1 5] [2 4 5]))]
+   [:p (diagram sixxfive (conj GminmelA [2 2 5] [0 4 5]))]
+   [:p (diagram sixxfive (conj GminmelG [3 0 5] [0 2 5] [3 5 5]))]
+   [:p (diagram sixxfive (conj GminmelE [0 0 5] [2 3 5] [0 5 5]))]
+   [:p (diagram sixxfive (conj GminmelD [3 1 5] [0 3 5]))]
    ])
 
 (defn mount [el]
