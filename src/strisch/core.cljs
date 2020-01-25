@@ -116,8 +116,8 @@
      [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"]]
      [:li "Les modes de la gamme mineure mélodique"
        [:ul
-         [:li "le " [:a {:href "#lydb7"} "lydien ♭7"]]
-         [:li "le " [:a {:href "#suploc"} "super locrien"] " (ou « altéré »)"]
+         [:li [:a {:href "#lydb7"} "lydien ♭7"]]
+         [:li [:a {:href "#suploc"} "super locrien"] " (ou « altéré »)"]
        ]
      ]
    ]
