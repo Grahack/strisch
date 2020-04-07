@@ -122,6 +122,7 @@
          [:li  [:a {:href "#alt"} "altérée"]]
          [:li [:a {:href "#m7b5"} "demi-diminué"]]
          [:li [:a {:href "#altM"} "altérée majeure"]]
+         [:li [:a {:href "#morph"} "morphing"]]
        ]]
      [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"] " et ses modes :"
        [:ul
@@ -274,6 +275,37 @@
    [:p (diagram domC [[2 3]]) (diagram domA [[0 3]])]
    [:p (diagram domE [[3 2]]) (diagram domD [[0 2]])]
    [:p (diagram domA [[2 1]]) (diagram domG [[0 1]])]
+   [:h3 {:id "morph"} "Morphing"]
+   [:p "On passe :"]
+   [:ul
+     [:li "maj/dom"
+       [:ul
+         [:li "de la majeure à la dom en diésant la 6"]
+         [:li "de la dom à la majeure en bémolisant la ♭7"]
+       ]
+     ]
+     [:li "m/d"
+       [:ul
+         [:li "de la mineure à la dorien en bémolisant la 3"]
+         [:li "de la dorien la mineure en diésant la 2"]
+       ]
+     ]
+     [:li "ø/alt"
+       [:ul
+         [:li "de la demi-diminuée à l’altérée en diésant la 1"]
+         [:li "de l’altérée à la demi-diminuée en bémolisant la ♭2"]
+       ]
+     ]
+     [:li "alt/alt M"
+       [:ul
+         [:li "de la altérée à la altérée majeure en diésant la 3"]
+         [:li "de la dom à la majeure en bémolisant la 3"]
+       ]
+     ]
+   ]
+   [:p [:strong "Exercice"]
+       " : pour chaque morphing, dessiner les 5 schémas où on voit
+       les deux notes à modifier."]
 
    [:h1 {:id "mel"} "Mineur mélodique"]
    [:h2 "C"]
