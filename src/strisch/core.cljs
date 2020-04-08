@@ -20,12 +20,12 @@
       [:g
         [:line
          {:x1 x :y1 line-y :x2 (+ x (fret->x l)) :y2 line-y
-          :stroke "black" :stroke-width 2}]
+          :class "str"}]
         (map #(identity [:line
                          ; the 1 is a hack for displaying entirely
                          {:x1 (+ 1 x (fret->x %)) :y1 (- line-y string-h)
                           :x2 (+ 1 x (fret->x %)) :y2 (+ line-y string-h)
-                          :stroke "black" :stroke-width 1}])
+                          :class "fret"}])
              (range (+ l 1)))])
   ))
 
@@ -37,7 +37,6 @@
           dot-x (fn [x] (+ 1 (/ fret-sep 2) (* x fret-sep)))
           dot-y (fn [y] (+ 1 string-h (* string-sep y)))]
       [:circle {:cx (dot-x x) :cy (dot-y y) :r r
-                :stroke "black" :stroke-width 3
                 :fill (if filled "black" "white")}])))
 
 ; strings is a list of [x l] where x is the offset and l the length
