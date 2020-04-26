@@ -86,6 +86,9 @@
 (def domE [[0 0] [2 3] [1 4] [2 3]])
 (def domD [[0 0] [1 3] [1 4] [1 3]])
 
+(def onexfive [[0 0] [0 0] [1 5]])
+(def minmelE [[1 1] [2 1] [4 1] [1 2] [3 2] [4 2]])
+(def minmel4 [[1 2] [2 2] [4 2] [5 2]])
 (def GminmelC [[1 0] [3 0] [0 1] [1 1] [3 1] [4 1] [0 2] [2 2]
                [0 3] [1 3] [3 3] [0 4] [2 4] [3 4] [1 5] [3 5]])
 (def GminmelA [[1 0] [3 0] [1 1] [2 1] [4 1] [0 2] [2 2] [3 2]
@@ -306,29 +309,40 @@
        " : pour chaque morphing, dessiner les 5 schémas où on voit
        les deux notes à modifier."]
 
-   [:h1 {:id "mel"} "Mineur mélodique"]
-   [:h2 "C"]
-   [:p (diagram sixxfive (conj GminmelC [1 1 5] [3 4 5]))]
-   [:h2 "A"]
-   [:p (diagram sixxfive (conj GminmelA [3 2 5] [1 4 5]))]
-   [:h2 "G"]
-   [:p (diagram sixxfive (conj GminmelG [4 0 5] [1 2 5] [4 5 5]))]
-   [:h2 "E"]
-   [:p (diagram sixxfive (conj GminmelE [1 0 5] [3 3 5] [1 5 5]))]
-   [:h2 "D"]
-   [:p (diagram sixxfive (conj GminmelD [4 1 5] [1 3 5]))]
-   [:h1 {:id "lydb7"} "Lydien ♭7"]
-   [:p (diagram sixxfive (conj GminmelG [2 1 5] [4 4 5]))]
-   [:p (diagram sixxfive (conj GminmelE [3 2 5] [1 4 5]))]
-   [:p (diagram sixxfive (conj GminmelD [4 0 5] [1 2 5] [4 5 5]))]
-   [:p (diagram sixxfive (conj GminmelC [1 0 5] [3 3 5] [1 5 5]))]
-   [:p (diagram sixxfive (conj GminmelA [4 1 5] [1 3 5]))]
-   [:h1 {:id "suploc"} "Super locrien (altéré)"]
-   [:p (diagram sixxfive (conj GminmelC [0 1 5] [2 4 5]))]
-   [:p (diagram sixxfive (conj GminmelA [2 2 5] [0 4 5]))]
-   [:p (diagram sixxfive (conj GminmelG [3 0 5] [0 2 5] [3 5 5]))]
-   [:p (diagram sixxfive (conj GminmelE [0 0 5] [2 3 5] [0 5 5]))]
-   [:p (diagram sixxfive (conj GminmelD [3 1 5] [0 3 5]))]
+   [:h1 {:id "mel"} "Mineur mélodique et ses modes intéressants"]
+   [:p "Seuls le lydien ♭7 et le super locrien sont considérés intéressants."]
+   [:p "Les deux premiers diagrammes sont des formes simples extraites du
+       « méga diagramme ». TODO : les six autres sont des « voisinages » que
+       l’on peut noter ainsi (système CAGED) :" [:br]
+       "D E" [:br]
+       "A C" [:br]
+       "E G" [:br]]
+   [:p "Puis viennent les 5 diagrammes sur tout le travers du manche,
+       dans l’ordre CAGED."]
+   [:h2 {:id "mel"} "Mineur mélodique"]
+   [:p (diagram twoxfour (conj minmelE [4 2 5]))
+       (diagram onexfive (conj minmel4 [2 2 5]))]
+   [:p (diagram sixxfive (conj GminmelC [1 1 5] [3 4 5]))
+       (diagram sixxfive (conj GminmelA [3 2 5] [1 4 5]))
+       (diagram sixxfive (conj GminmelG [4 0 5] [1 2 5] [4 5 5]))
+       (diagram sixxfive (conj GminmelE [1 0 5] [3 3 5] [1 5 5]))
+       (diagram sixxfive (conj GminmelD [4 1 5] [1 3 5]))]
+   [:h2 {:id "lydb7"} "Lydien ♭7"]
+   [:p (diagram twoxfour (conj minmelE [4 1 5] [2 3 5]))
+       (diagram onexfive (conj minmel4 [2 1 5]))]
+   [:p (diagram sixxfive (conj GminmelG [2 1 5] [4 4 5]))
+       (diagram sixxfive (conj GminmelE [3 2 5] [1 4 5]))
+       (diagram sixxfive (conj GminmelD [4 0 5] [1 2 5] [4 5 5]))
+       (diagram sixxfive (conj GminmelC [1 0 5] [3 3 5] [1 5 5]))
+       (diagram sixxfive (conj GminmelA [4 1 5] [1 3 5]))]
+   [:h2 {:id "suploc"} "Super locrien (altéré)"]
+   [:p (diagram twoxfour (conj minmelE [3 2 5]))
+       (diagram onexfive (conj minmel4 [1 2 5]))]
+   [:p (diagram sixxfive (conj GminmelC [0 1 5] [2 4 5]))
+       (diagram sixxfive (conj GminmelA [2 2 5] [0 4 5]))
+       (diagram sixxfive (conj GminmelG [3 0 5] [0 2 5] [3 5 5]))
+       (diagram sixxfive (conj GminmelE [0 0 5] [2 3 5] [0 5 5]))
+       (diagram sixxfive (conj GminmelD [3 1 5] [0 3 5]))]
    ])
 
 (defn mount [el]
