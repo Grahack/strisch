@@ -297,8 +297,8 @@
      ]
      [:li "alt/alt M"
        [:ul
-         [:li "de la altérée à la altérée majeure en diésant la 3"]
-         [:li "de la dom à la majeure en bémolisant la 3"]
+         [:li "de l’altérée à l’altérée majeure en diésant la 3"]
+         [:li "de l’altérée majeure à l’altérée en bémolisant la 3"]
        ]
      ]
    ]
