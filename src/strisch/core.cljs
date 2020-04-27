@@ -122,6 +122,7 @@
          [:li [:a {:href "#M7"} "M7"]]
          [:li [:a {:href "#M711"} "M7♯11"]]
          [:li [:a {:href "#alt"} "altérée"]]
+         [:li [:a {:href "#dom"} "dominante"]]
          [:li [:a {:href "#m7b5"} "demi-diminué"]]
          [:li [:a {:href "#altM"} "altérée majeure"]]
          [:li [:a {:href "#morph"} "morphing"]]
