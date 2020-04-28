@@ -138,8 +138,10 @@
          [:li [:a {:href "#altM"} "altérée majeure"]]
          [:li [:a {:href "#morph"} "morphing"]]
        ]]
-     [:li "La " [:a {:href "#mel"} "gamme mineure mélodique"] " et ses modes :"
+     [:li "La " [:a {:href "#melmodes"}
+                 "gamme mineure mélodique et ses modes :"]
        [:ul
+         [:li [:a {:href "#mel"} "mineur mélodique"]]
          [:li [:a {:href "#lydb7"} "lydien ♭7"]]
          [:li [:a {:href "#suploc"} "super locrien"] " (ou « altéré »)"]
        ]
@@ -352,7 +354,7 @@
        " : pour chaque morphing, dessiner les 5 schémas où on voit
        les deux notes à modifier."]
 
-   [:h1 {:id "mel"} "Mineur mélodique et ses modes intéressants"]
+   [:h1 {:id "melmodes"} "Mineur mélodique et ses modes intéressants"]
    [:p "Seuls le lydien ♭7 et le super locrien sont considérés intéressants."]
    [:p "Les deux premiers diagrammes sont des formes simples extraites du
        « méga diagramme ». TODO : les six autres sont des « voisinages » que
