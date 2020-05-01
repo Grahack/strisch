@@ -1,6 +1,8 @@
 # Strisch
 
-Scale diagrams for string instruments, [see the generated page here](https://grahack.github.io/strisch/strisch.html).
+Scale diagrams for string instruments,
+[see the generated page here](https://grahack.github.io/strisch/strisch.html),
+[download the pdf here](https://grahack.github.io/strisch/strisch.pdf).
 
 Dev HQ are [on GitHub](https://github.com/Grahack/strisch),
 accompanying website is [live here](https://grahack.github.io/strisch/).
