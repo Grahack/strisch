@@ -70,16 +70,35 @@
 (def GM-D [[1 5] [3 5] [4 5] [1 4] [3 4]       [0 3] [1 3] [3 3]
            [0 2] [1 2] [3 2] [1 1] [3 1] [4 1] [1 0] [3 0] [4 0]])
 
-(def P-dom-C [[0 5] [3 5] [1 4] [3 4] [0 3] [2 3]
-              [0 2] [3 2] [1 1] [3 1] [0 0] [3 0]])
-(def P-dom-A [[1 5] [4 5] [1 4] [3 4] [0 3] [3 3]
-              [1 2] [3 2] [1 1] [3 1] [1 0] [4 0]])
-(def P-dom-G [[1 5] [3 5] [0 4] [2 4] [0 3] [3 3]
-              [0 2] [2 2] [0 1] [3 1] [1 0] [3 0]])
-(def P-dom-E [[1 5] [3 5] [0 4] [3 4] [1 3] [3 3]
-              [0 2] [2 2] [1 1] [4 1] [1 0] [3 0]])
-(def P-dom-D [[1 5] [3 5] [1 4] [4 4] [1 3] [3 3]
-              [0 2] [3 2] [2 1] [4 1] [1 0] [3 0]])
+(def P-C     [[0 5] [3 5] [0 4] [3 4] [0 3] [2 3]
+              [0 2] [2 2] [1 1] [3 1] [0 0] [3 0]])
+(def P-C-bis [[1 5] [4 5] [1 4] [4 4] [1 3] [3 3]
+              [1 2] [3 2] [2 1] [4 1] [1 0] [4 0]])
+(def P-A     [[1 5] [3 5] [1 4] [3 4] [0 3] [3 3]
+              [0 2] [3 2] [1 1] [3 1] [1 0] [3 0]])
+(def P-G     [[0 5] [3 5] [0 4] [2 4] [0 3] [2 3]
+              [0 2] [2 2] [0 1] [3 1] [0 0] [3 0]])
+(def P-G-bis [[1 5] [4 5] [1 4] [3 4] [1 3] [3 3]
+              [1 2] [3 2] [1 1] [4 1] [1 0] [4 0]])
+(def P-E     [[1 5] [3 5] [0 4] [3 4] [0 3] [3 3]
+              [0 2] [2 2] [1 1] [3 1] [1 0] [3 0]])
+(def P-D     [[1 5] [3 5] [1 4] [3 4] [1 3] [3 3]
+              [0 2] [3 2] [1 1] [4 1] [1 0] [3 0]])
+
+(def P-dom-C     [[0 5] [3 5] [1 4] [3 4] [0 3] [2 3]
+                  [0 2] [3 2] [1 1] [3 1] [0 0] [3 0]])
+(def P-dom-C-bis [[1 5] [4 5] [2 4] [4 4] [1 3] [3 3]
+                  [1 2] [4 2] [2 1] [4 1] [1 0] [4 0]])
+(def P-dom-A     [[1 5] [4 5] [1 4] [3 4] [0 3] [3 3]
+                  [1 2] [3 2] [1 1] [3 1] [1 0] [4 0]])
+(def P-dom-G     [[1 5] [3 5] [0 4] [2 4] [0 3] [3 3]
+                  [0 2] [2 2] [0 1] [3 1] [1 0] [3 0]])
+(def P-dom-G-bis [[2 5] [4 5] [1 4] [3 4] [1 3] [4 3]
+                  [1 2] [3 2] [1 1] [4 1] [2 0] [4 0]])
+(def P-dom-E     [[1 5] [3 5] [0 4] [3 4] [1 3] [3 3]
+                  [0 2] [2 2] [1 1] [4 1] [1 0] [3 0]])
+(def P-dom-D     [[1 5] [3 5] [1 4] [4 4] [1 3] [3 3]
+                  [0 2] [3 2] [2 1] [4 1] [1 0] [3 0]])
 
 (def twoxfour [[0 0] [1 4] [1 4]])
 (def threexthree [[0 0] [1 3] [1 3] [1 3]])
@@ -243,36 +262,78 @@
    [:p (diagram MG [[4 3]]) (diagram ME [[2 3]])]
    [:p (diagram MC [[4 2]]) (diagram MA [[2 2]])]
    [:p (diagram ME [[4 1]]) (diagram MD [[1 1]])]
+   [:p "La penta majeure sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfour  (conj P-C [1 1 5] [3 4 5]))]
+   [:p (diagram sixxfour  (conj P-A [3 2 5] [1 4 5]))]
+   [:p (diagram sixxfour  (conj P-G [3 0 5] [0 2 5] [3 5 5]))]
+   [:p (diagram sixxfour  (conj P-E [1 0 5] [3 3 5] [1 5 5]))]
+   [:p (diagram sixxfive  (conj P-D [4 1 5] [1 3 5]))]
    [:hr]
    [:h3 {:id "m"} "m"]
    [:p (diagram twoxfour [[1 1]]) (diagram threexthree [[3 2] [1 4]])]
    [:p (diagram MA [[4 3]]) (diagram MG [[1 3]])]
    [:p (diagram MD [[3 2]]) (diagram MC [[1 2]])]
    [:p (diagram MG [[3 1]]) (diagram ME [[1 1]])]
+   [:p "La penta mineure sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfive  (conj P-D [1 1 5] [3 4 5]))]
+   [:p (diagram sixxfour  (conj P-C [2 2 5] [0 4 5]))]
+   [:p (diagram sixxfour  (conj P-A [3 0 5] [0 2 5] [3 5 5]))]
+   [:p (diagram sixxfour  (conj P-G [0 0 5] [2 3 5] [0 5 5]))]
+   [:p (diagram sixxfour  (conj P-E [3 1 5] [0 3 5]))]
    [:hr]
    [:h3 {:id "d"} "d"]
    [:p (diagram twoxfour [[1 0] [4 3]]) (diagram threexthree [[3 1] [1 3]])]
    [:p (diagram ME [[4 3]]) (diagram MD [[1 3]])]
    [:p (diagram MA [[4 2]]) (diagram MG [[1 2]])]
    [:p (diagram MD [[3 1]]) (diagram MC [[1 1]])]
+   [:p "La penta dorienne sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfour  (conj P-A [1 1 5] [3 4 5]))]
+   [:p (diagram sixxfour  (conj P-G [2 2 5] [0 4 5]))]
+   [:p (diagram sixxfour  (conj P-E [3 0 5] [0 2 5] [3 5 5]))]
+   [:p (diagram sixxfive  (conj P-D [1 0 5] [3 3 5] [1 5 5]))]
+   [:p (diagram sixxfour  (conj P-C [3 1 5] [0 3 5]))]
    [:hr]
    [:h3 {:id "M7"} "M7"]
    [:p (diagram twoxfour [[2 2] [4 0]]) (diagram threexthree [[1 0] [4 3]])]
    [:p (diagram MD [[4 3]]) (diagram MC [[2 3]])]
    [:p (diagram MG [[4 2]]) (diagram ME [[2 2]])]
    [:p (diagram MC [[4 1]]) (diagram MA [[2 1]])]
+   [:p "La penta M7 sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfour  (conj P-G [1 1 5] [3 4 5]))]
+   [:p (diagram sixxfour  (conj P-E [3 2 5] [1 4 5]))]
+   [:p (diagram sixxfive  (conj P-D [4 0 5] [1 2 5] [4 5 5]))]
+   [:p (diagram sixxfour  (conj P-C [1 0 5] [3 3 5] [1 5 5]))]
+   [:p (diagram sixxfive  (conj P-A [4 1 5] [1 3 5]))]
    [:hr]
    [:h3 {:id "M711"} "M7♯11"]
    [:p (diagram twoxfour [[2 1]]) (diagram threexthree [[4 2] [2 4]])]
    [:p (diagram MA [[5 3]]) (diagram MG [[2 3]])]
    [:p (diagram MD [[4 2]]) (diagram MC [[2 2]])]
    [:p (diagram MG [[4 1]]) (diagram ME [[2 1]])]
+   [:p "La penta M7♯11 sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfive  (conj P-D [2 1 5] [4 4 5]))]
+   [:p (diagram sixxfour  (conj P-C [3 2 5] [1 4 5]))]
+   [:p (diagram sixxfive  (conj P-A [1 2 5] [4 5 5] [4 0 5]))]
+   [:p (diagram sixxfour  (conj P-G [3 3 5] [1 5 5] [1 0 5]))]
+   [:p (diagram sixxfive  (conj P-E [4 1 5] [1 3 5]))]
    [:hr]
    [:h3 {:id "alt"} "alt"]
    [:p (diagram twoxfour [[3 2]]) (diagram threexthree [[0 2]])]
    [:p (diagram MC [[3 3]]) (diagram MA [[1 3]])]
    [:p (diagram ME [[3 2]]) (diagram MD [[0 2]])]
    [:p (diagram MA [[3 1]]) (diagram MG [[0 1]])]
+   [:p "La penta alt sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfour  (conj P-E [0 1 5] [2 4 5]))]
+   [:p (diagram sixxfive  (conj P-D [2 2 5] [0 4 5]))]
+   [:p (diagram sixxfive  (conj P-C-bis [3 0 5] [0 2 5] [3 5 5]))]
+   [:p (diagram sixxfour  (conj P-A [0 0 5] [2 3 5] [0 5 5]))]
+   [:p (diagram sixxfive  (conj P-G-bis [3 1 5] [0 3 5]))]
+   [:p "La penta alt « habille » les accords 7 des cordes 2, 3 et 4 ainsi :"]
+   [:p (diagram sixxfive  (conj P-G [2 1 5] [4 2 5] [3 3 5]))]
+   [:p (diagram sixxfour  (conj P-E [0 1 5] [2 2 5] [1 3 5]))]
+   [:p (diagram sixxfive  (conj P-D [2 1 5] [0 2 5] [2 3 5]))]
+   [:p (diagram sixxfour  (conj P-C [2 1 5] [3 2 5] [2 3 5]))]
+   [:p (diagram sixxfour  (conj P-A [3 1 5] [1 2 5] [2 3 5]))]
    [:hr]
    [:h3 {:id "dom"} "dom"]
    [:p (diagram fourxfour [[4 2]]) (diagram threexfive [[1 2]])]
@@ -322,6 +383,18 @@
    [:p (diagram domC [[2 3]]) (diagram domA [[0 3]])]
    [:p (diagram domE [[3 2]]) (diagram domD [[0 2]])]
    [:p (diagram domA [[2 1]]) (diagram domG [[0 1]])]
+   [:p "La penta alt M sur tout le manche d’une guitare :"]
+   [:p (diagram sixxfive  (conj P-dom-E [0 1 5] [2 4 5]))]
+   [:p (diagram sixxfive  (conj P-dom-D [2 2 5] [0 4 5]))]
+   [:p (diagram sixxfive  (conj P-dom-C-bis [3 0 5] [0 2 5] [3 5 5]))]
+   [:p (diagram sixxfive  (conj P-dom-A [0 0 5] [2 3 5] [0 5 5]))]
+   [:p (diagram sixxfive  (conj P-dom-G-bis [3 1 5] [0 3 5]))]
+   [:p "La penta alt M « habille » les accords 7 des cordes 2, 3 et 4 ainsi :"]
+   [:p (diagram sixxfour  (conj P-dom-C [1 1 5] [3 2 5] [2 3 5]))]
+   [:p (diagram sixxfive  (conj P-dom-A [3 1 5] [1 2 5] [3 3 5]))]
+   [:p (diagram sixxfour  (conj P-dom-G [0 1 5] [0 3 5]))]
+   [:p (diagram sixxfive  (conj P-dom-E [1 1 5] [2 2 5] [1 3 5]))]
+   [:p (diagram sixxfive  (conj P-dom-D [2 1 5] [0 2 5] [1 3 5]))]
    [:h3 {:id "morph"} "Morphing"]
    [:p "On passe :"]
    [:ul
