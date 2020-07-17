@@ -160,7 +160,7 @@
          [:li [:a {:href "#loc"} "locrien"]]
        ]
      ]
-     [:li "La " [:a {:href "#maj"} "gamme majeure"] " en 3 notes par corde :"
+     [:li "La " [:a {:href "#ion3"} "gamme majeure"] " en 3 notes par corde :"
        [:ul
          [:li [:a {:href "#dor3"} "dorien"]]
          [:li [:a {:href "#phr3"} "phrygien"]]
