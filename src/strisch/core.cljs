@@ -70,6 +70,21 @@
 (def GM-D [[1 5] [3 5] [4 5] [1 4] [3 4]       [0 3] [1 3] [3 3]
            [0 2] [1 2] [3 2] [1 1] [3 1] [4 1] [1 0] [3 0] [4 0]])
 
+(def GM-3-C  [[0 5] [1 5] [3 5] [0 4] [2 4] [3 4] [0 3] [2 3] [3 3]
+              [0 2] [2 2] [4 2] [1 1] [3 1] [5 1] [1 0] [3 0] [5 0]])
+(def GM-3-A  [[0 5] [2 5] [4 5] [1 4] [2 4] [4 4] [1 3] [2 3] [4 3]
+              [1 2] [3 2] [4 2] [2 1] [4 1] [5 1] [2 0] [4 0] [6 0]])
+(def GM-3-AG [[0 5] [2 5] [4 5] [0 4] [2 4] [4 4] [0 3] [2 3] [4 3]
+              [1 2] [2 2] [4 2] [2 1] [3 1] [5 1] [2 0] [4 0] [5 0]])
+(def GM-3-GE [[0 5] [2 5] [3 5] [0 4] [2 4] [3 4] [0 3] [2 3] [4 3]
+              [0 2] [2 2] [4 2] [1 1] [3 1] [5 1] [2 0] [3 0] [5 0]])
+(def GM-3-E  [[0 5] [1 5] [3 5] [0 4] [1 4] [3 4] [0 3] [2 3] [3 3]
+              [0 2] [2 2] [3 2] [1 1] [3 1] [5 1] [1 0] [3 0] [5 0]])
+(def GM-3-ED [[0 5] [2 5] [4 5] [0 4] [2 4] [4 4] [1 3] [2 3] [4 3]
+              [1 2] [2 2] [4 2] [2 1] [4 1] [5 1] [2 0] [4 0] [5 0]])
+(def GM-3-DC [[0 5] [2 5] [3 5] [0 4] [2 4] [4 4] [0 3] [2 3] [4 3]
+              [0 2] [2 2] [4 2] [2 1] [3 1] [5 1] [2 0] [3 0] [5 0]])
+
 (def GM-Io-3 [[0 4] [2 4] [4 4] [0 3] [2 3] [4 3]
               [1 2] [2 2] [4 2] [2 1] [3 1] [5 1] [2 0] [4 0] [5 0]])
 (def GM-Do-3 [[0 4] [2 4] [3 4] [0 3] [2 3] [4 3]
@@ -160,14 +175,18 @@
          [:li [:a {:href "#loc"} "locrien"]]
        ]
      ]
-     [:li "La " [:a {:href "#ion3"} "gamme majeure"] " (ou ED) en 3 notes par corde :"
+     [:li "La " [:a {:href "#maj3"} "gamme majeure"] " "
+          "en 3 notes par corde sur 6 cordes, "
+          "puis ses modes sur 5 cordes :"
        [:ul
-         [:li [:a {:href "#dor3"} "dorien"] " ou DC"]
-         [:li [:a {:href "#phr3"} "phrygien"] " ou C"]
-         [:li [:a {:href "#lyd3"} "lydien"] " ou A"]
-         [:li [:a {:href "#mix3"} "mixolydien"] " ou AG"]
-         [:li [:a {:href "#aeo3"} "aéolien"] " ou GE"]
-         [:li [:a {:href "#loc3"} "locrien"] " ou E"]
+         [:li [:a {:href "#ion3"} "ionien"]     " (extrait du AG"
+                                                " de la gamme majeure)"]
+         [:li [:a {:href "#dor3"} "dorien"]     " (GE)"]
+         [:li [:a {:href "#phr3"} "phrygien"]   " (E)"]
+         [:li [:a {:href "#lyd3"} "lydien"]     " (ED)"]
+         [:li [:a {:href "#mix3"} "mixolydien"] " (DC)"]
+         [:li [:a {:href "#aeo3"} "aéolien"]    " (C)"]
+         [:li [:a {:href "#loc3"} "locrien"]    " (A)"]
        ]
      ]
      [:li "Les gammes " [:a {:href "#penta"} "pentatoniques "]
@@ -251,20 +270,36 @@
    [:p (diagram sixxfour  (conj GM-E [0 0 5] [2 3 5] [0 5 5]))]
    [:p (diagram sixxfive  (conj GM-D [3 1 5] [0 3 5]))]
 
-   [:h1 "Les modes de la gamme majeure en 3 notes par corde"]
-   [:h2 {:id "ion3"} "Ionien (ou ED)"]
+   [:h1 {:id "maj3"} "La gamme majeure en 3 notes par corde"]
+   [:h2 "C"]
+   [:p (diagram sixxsix   (conj GM-3-C [1 1 5] [3 4 5]))]
+   [:h2 "A"]
+   [:p (diagram sixxseven (conj GM-3-A [4 2 5] [2 4 5]))]
+   [:h2 "AG"]
+   [:p (diagram sixxsix   (conj GM-3-AG [5 0 5] [2 2 5] [0 4 5]))]
+   [:h2 "GE"]
+   [:p (diagram sixxsix   (conj GM-3-GE [3 0 5] [0 2 5] [3 5 5]))]
+   [:h2 "E"]
+   [:p (diagram sixxsix   (conj GM-3-E [1 0 5] [3 3 5] [1 5 5]))]
+   [:h2 "ED"]
+   [:p (diagram sixxsix   (conj GM-3-ED [5 1 5] [2 3 5] [0 5 5]))]
+   [:h2 "DC"]
+   [:p (diagram sixxsix   (conj GM-3-DC [3 1 5] [0 3 5]))]
+
+   [:h1 "Les modes de la gamme majeure en 3 notes par corde, sur 5 cordes"]
+   [:h2 {:id "ion3"} "Ionien (extrait de AG)"]
    [:p (diagram sixxsix (conj GM-Io-3 [5 0 5] [2 2 5] [0 4 5]))]
-   [:h2 {:id "dor3"} "Dorien (ou DC)"]
+   [:h2 {:id "dor3"} "Dorien (extrait de GE)"]
    [:p (diagram sixxsix (conj GM-Do-3 [5 0 5] [2 2 5] [0 4 5]))]
-   [:h2 {:id "phr3"} "Phrygien (ou C)"]
+   [:h2 {:id "phr3"} "Phrygien (extrait de E)"]
    [:p (diagram sixxsix (conj GM-Ph-3 [5 0 5] [2 2 5] [0 4 5]))]
-   [:h2 {:id "lyd3"} "Lydien (ou A)"]
+   [:h2 {:id "lyd3"} "Lydien (extrait de ED)"]
    [:p (diagram sixxsix (conj GM-Ly-3 [5 0 5] [2 2 5] [0 4 5]))]
-   [:h2 {:id "mix3"} "Mixolydien (ou AG)"]
+   [:h2 {:id "mix3"} "Mixolydien (extrait de DC)"]
    [:p (diagram sixxsix (conj GM-Mi-3 [5 0 5] [2 2 5] [0 4 5]))]
-   [:h2 {:id "aeo3"} "Aéolien (ou GE)"]
+   [:h2 {:id "aeo3"} "Aéolien (extrait de C)"]
    [:p (diagram sixxsix (conj GM-Ae-3 [5 0 5] [2 2 5] [0 4 5]))]
-   [:h2 {:id "loc3"} "Locrien (ou E)"]
+   [:h2 {:id "loc3"} "Locrien (extrait de A)"]
    [:p (diagram sixxsix (conj GM-Lo-3 [5 0 5] [2 2 5] [0 4 5]))]
 
    [:h1 {:id "penta"} "Pentatoniques"]
